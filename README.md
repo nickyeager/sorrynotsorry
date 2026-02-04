@@ -1,3 +1,53 @@
+# Sorry Not Sorry (Pickleball Ledger)
+
+Companion project for an upcoming talk. This app tracks pickleball games, scores, locations, and money won/lost between players.
+
+## Overview
+
+**What it does**
+- Tracks singles and doubles matches.
+- Records game location and final score.
+- Supports live scoring or post-game entry.
+
+**Tech stack**
+- Frontend: Next.js + shadcn-admin UI
+- Backend: Supabase
+
+**Future ideas**
+- Optional DUPR integration: https://backend.mydupr.com/swagger-ui/index.html
+
+## Getting Started
+
+### Prerequisites
+- Node.js 18+ (or 20+)
+- npm (or your preferred Node package manager)
+
+### Setup
+1. Install dependencies:
+	- `npm install`
+2. Create your environment file:
+	- `cp .env.local.example .env.local`
+	- Fill in Supabase keys and any required values.
+3. Start the dev server:
+	- `npm run dev`
+4. Open http://localhost:3000
+
+### Common Scripts
+- `npm run dev` — run the app locally
+- `npm run build` — create a production build
+- `npm run start` — run the production build
+- `npm run lint` — lint the project
+
+## Project Structure
+- `src/` — application code
+- `public/` — static assets
+- `supabase/` — migrations and seed data
+
+## Talk Steps (from slide deck)
+I couldn’t access the slide deck (Google Slides requires login). Paste the steps here and I’ll insert them exactly as-is:
+- Step 1: ...
+- Step 2: ...
+- Step 3: ...
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
