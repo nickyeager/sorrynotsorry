@@ -2,6 +2,10 @@
 
 Companion project for an upcoming talk. This app tracks pickleball games, scores, locations, and money won/lost between players.
 
+## Why the Name?
+
+In pickleball, it’s common to get hit by the ball or see a ball clip the net and drop in. Players often say “sorry not sorry” in a playful, ironic way: you’re being polite, but secretly not sorry at all.
+
 ## Overview
 
 **What it does**
@@ -44,43 +48,78 @@ Companion project for an upcoming talk. This app tracks pickleball games, scores
 - `supabase/` — migrations and seed data
 
 ## Talk Steps (from slide deck)
-I couldn’t access the slide deck (Google Slides requires login). Paste the steps here and I’ll insert them exactly as-is:
-- Step 1: ...
-- Step 2: ...
-- Step 3: ...
+
+### 1) Initial research / planning phase
+- Treat planning as critical. Maintain an instruction file that includes:
+	- High-level project organization
+	- External dependencies and constraints
+	- Positive and negative examples
+- Watch token usage; keep prompts scoped and disciplined.
+- Use helpers like /init-project and /create-prd.
+- Be judicious about how much code gets generated.
+
+### 2) Demo flow
+- Run /create-prd and walk through the generated documentation.
+- Emphasize security and architecture standards.
+- Show the live context window.
+- Show the validation workflow end-to-end.
+- Use hooks to run linting/formatting after each turn.
+- Build and reuse prompt/instruction libraries over time.
+
+### 3) Task planning (part 2)
+- Break work into linear, well-scoped tasks.
+- Include testing requirements (TDD when possible).
+- Require docs and organization updates as part of each task.
+- Integrate into existing structure; avoid unnecessary new files.
+
+### 4) Validation: “trust (kinda) but verify”
+- Use /validation:validate or /test.
+- For bugs: /debug plus clear repro steps.
+- Maintain unit tests plus an e2e test (Playwright or Chrome MCP).
+
+### 5) Implementation (part 2)
+- Combine RAG, memory, prompt engineering, and task management as needed.
+- Memory can be hardcoded logs or a tool like claude-mem.
+- Task management can be off-the-shelf tools or custom workflows.
+
+### 6) Validation (agentic + dev)
+- Agentic validation: unit/integration tests, plus MCP integrations.
+- Chrome MCP is powerful but can be tedious unless using a -yolo mode.
+- Dev validation: review code; if it’s too much to review, the task was too big.
+- Always document manual validation steps.
+
+### 7) Example: Pickleball game tracker
+- Requirements: basic auth, teams, leagues support.
+- /skills-brainstorming can help generate ideas.
+- Start with a plan.md outlining stack, user profile, and MVP milestones.
+- Use /superpowers:brainstorm or /create-prd to build a detailed PRD.
+- Highlight MVP checkboxes, docs, API references, and codebase structure.
+- Leave as little ambiguity as possible.
+
+### 8) Debugging
+- Same process, smaller loops.
+- Use a debug-focused skill/profile (e.g., “smart debug”).
+- TDD preferred; can be skipped for tiny fixes.
+
+### 9) Common gotchas
+- Illusion of productivity: lots of prompts, little progress.
+- Tools change rapidly; a working method may break later.
+- “Copy-paste bot” loop: fix one error, create another.
+- The escape hatch is to zoom out and return to planning.
+
+### 10) Active development loop
+- When validation reveals a missed requirement, update the docs.
+- Core loop:
+	- /core_piv_loop:prime
+	- /core_piv_loop:plan-feature
+	- /core_piv_loop:execute
+	- /validation:validate
+	- /validation:code-review
+	- /validation:code-review-fix
+	- /validation:execution-report
+	- /validation:system-review
+- Reference: https://github.com/thedotmack/claude-mem
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
